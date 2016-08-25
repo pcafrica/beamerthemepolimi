@@ -7,9 +7,13 @@
 \newif\if@bgphoto
 \@bgphotofalse
 \DeclareOption{bgphoto}{\@bgphototrue}
+
+\newif\if@nologo
+\@nologofalse
+\DeclareOption{nologo}{\@nologotrue}
 \ProcessOptions
 
-\RequirePackage{graphicx, tikz}
+\RequirePackage{tikz}
 \graphicspath{{beamerthemepolimi_img/}}
 
 \useinnertheme{polimi}

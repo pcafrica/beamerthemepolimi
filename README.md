@@ -1,6 +1,8 @@
 # beamerthemepolimi
 Beamer port of the official PoliMi presentation theme.
 
+Requires the package [PGF/TikZ](https://www.ctan.org/pkg/pgf) to be installed in your LaTeX distribution.
+
 Demo
 ----
 ![](https://github.com/elauksap/beamerthemepolimi/blob/master/demo-bgphoto.jpg)
@@ -20,7 +22,24 @@ Finally write in your preamble:
 \usetheme{polimi}
 ```
 
-A default background photo on the title page (instead of a white bg) can be selected through the optional parameter:
+Custom options
+--------------
+A default background photo on the title page (instead of a white background) can be selected through the optional parameter _bgphoto_:
 ```
 \usetheme[bgphoto]{polimi}
+```
+
+In order to hide the default logo shown on the title page, the option _nologo_ is available:
+```
+\usetheme[nologo]{polimi}
+```
+
+Then you can customize your own title page by typing, for instance, the following commands on the first slide, right after the _\maketitle_ command (see _demo.tex_):
+```
+\begin{tikzpicture}[overlay, remember picture]
+    \node at (current page.north west) [anchor=north west, inner sep=0.5cm]
+    {
+        \includegraphics[width=0.3\paperwidth]{logo_centrato_BN_negativo.png}
+    };
+\end{tikzpicture}
 ```
