@@ -9,14 +9,17 @@
                 \node at (current page.north) [anchor=north, inner sep=0pt] {\includegraphics[width=\paperwidth]{bgphoto_cut.png}};
             \fi
             \node (foot) at (current page.south) [anchor=south, inner sep=0pt] {\includegraphics[width=\paperwidth]{bg.png}};
-            \node at (foot.north) [anchor=south, inner sep=0.5cm] {
-                \if@bgphoto
-                    \includegraphics[width=0.3\paperwidth]{logo_centrato_COL_negativo.png}
-                \else
-                    \includegraphics[width=0.3\paperwidth]{logo_centrato_COL_positivo.png}
-                \fi};
+            \if@nologo\else
+                \node at (foot.north) [anchor=south, inner sep=0.5cm] {
+                    \if@bgphoto
+                        \includegraphics[width=0.3\paperwidth]{logo_centrato_COL_negativo.png}
+                    \else
+                        \includegraphics[width=0.3\paperwidth]{logo_centrato_COL_positivo.png}
+                    \fi
+                };
+            \fi
             \node at ([shift={(0, -0.1)}] foot.north) {\includegraphics[width=0.99\paperwidth]{decoration.png}};
-        \end{tikzpicture}  
+        \end{tikzpicture}
     \else
         \begin{tikzpicture}[overlay, remember picture]
             \node (head) at ([shift={(0, 2.475)}] current page.north) [anchor=north, inner sep=0pt] {\includegraphics[width=\paperwidth]{bg.png}};
