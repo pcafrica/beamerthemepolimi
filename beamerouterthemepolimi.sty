@@ -1,0 +1,39 @@
+\mode<presentation>
+
+% Header.
+\defbeamertemplate*{frametitle}{polimi}
+{
+    \begin{flushleft}
+        \vspace{-0.5cm}
+        {\small \insertsection\ \insertsubsection}~\\
+        \insertframetitle
+    \end{flushleft}
+}
+
+\defbeamertemplate{headline}{page number}
+{
+    \ifnum\c@framenumber>1
+        \vspace{5px}
+        \setbeamertemplate{footline}[page number]
+        \usebeamertemplate{footline}
+    \fi
+}
+
+\setbeamertemplate{headline}[page number]
+
+% Footer.
+\defbeamertemplate{footline}{polimi}{
+    \begin{minipage}[b][1cm][c]{\paperwidth}
+        \ifnum\c@framenumber>1
+            \hspace{1.5mm}
+            {\small\color{white}\insertauthor}
+            \hspace*{\fill}
+            \includegraphics[height=7px]{logo_bandiera.png}
+            \hspace{1.5mm}
+        \fi
+    \end{minipage}
+}
+
+\setbeamertemplate{footline}[polimi]
+
+\mode<all>

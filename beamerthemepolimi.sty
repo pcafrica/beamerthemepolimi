@@ -1,0 +1,24 @@
+% Pasquale Africa <pasqualeclaudio.africa@polimi.it>
+% Beamer port of the official PoliMi presentation theme.
+% Freely inspired by https://github.com/sbocce/POLIbeamer.
+
+\mode<presentation>
+
+\newif\if@bgphoto
+\@bgphotofalse
+\DeclareOption{bgphoto}{\@bgphototrue}
+\ProcessOptions
+
+\RequirePackage{graphicx, tikz}
+\graphicspath{{beamerthemepolimi_img/}}
+
+\useinnertheme{polimi}
+\useoutertheme{polimi}
+\usecolortheme{polimi}
+
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{blocks}[rounded][shadow=true]
+\setbeamertemplate{itemize items}[square]
+\setbeamertemplate{itemize subitem}[triangle]
+
+\mode<all>
