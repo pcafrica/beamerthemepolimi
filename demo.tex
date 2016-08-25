@@ -1,0 +1,53 @@
+\documentclass{beamer}
+
+% Photo background on titlepage.
+\usetheme[bgphoto]{polimi}
+
+% White background on titlepage.
+%\usetheme{polimi}
+
+\usepackage{lipsum}
+
+\title{Title}
+\subtitle{Subtitle}
+\date{25/08/2016}
+\author{Author}
+
+\begin{document}
+    \begin{frame}
+        \maketitle
+    \end{frame}
+    
+    \begin{frame}{Table of contents}
+      \tableofcontents
+    \end{frame}
+    
+    \section{Section 1}
+    \begin{frame}{Slide 1}
+        \lipsum[1]
+    \end{frame}
+    
+    \subsection{Subsection 1.1}
+    \begin{frame}{Slide 1.1}
+        \begin{itemize}
+            \item item 1
+            \begin{itemize}
+                \item item 1.1
+                \item item 1.2
+            \end{itemize}
+            \item item 2
+            \item item 3
+        \end{itemize}
+    \end{frame}
+    
+    \subsection{Subsection 1.2}
+    \begin{frame}[plain]{Slide 1.2 without numbering}
+        \lipsum[2]
+        \addtocounter{page}{-1}
+    \end{frame}
+    
+    \section{Section 2}
+    \begin{frame}{Slide 2}
+        \lipsum[3]
+    \end{frame}
+\end{document}
