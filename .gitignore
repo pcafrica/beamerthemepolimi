@@ -7,7 +7,9 @@
 *.lof
 *.log
 *.lot
+*.nav
 *.out
+*.snm
 *.tdo
 *.toc
 *.xml
