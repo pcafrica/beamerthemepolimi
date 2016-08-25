@@ -16,7 +16,7 @@ Download the latest release by following [this](https://github.com/elauksap/beam
 Then copy the files named beamer*themepolimi.sty and the folder beamerthemepolimi_img/ into the same folder as your LaTeX source file.
 
 Finally write in your preamble:
-```
+```latex
 \documentclass{beamer}
 
 \usetheme{polimi}
@@ -25,17 +25,17 @@ Finally write in your preamble:
 Custom options
 --------------
 A default background photo on the title page (instead of a white background) can be selected through the optional parameter _bgphoto_:
-```
+```latex
 \usetheme[bgphoto]{polimi}
 ```
 
 In order to hide the default logo shown on the title page, the option _nologo_ is available:
-```
+```latex
 \usetheme[nologo]{polimi}
 ```
 
 Then you can customize your own title page by typing, for instance, the following commands on the first slide, right after the _\maketitle_ command (see _demo.tex_):
-```
+```latex
 \begin{tikzpicture}[overlay, remember picture]
     \node at (current page.north west) [anchor=north west, inner sep=0.5cm]
     {
