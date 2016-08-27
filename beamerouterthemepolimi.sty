@@ -5,7 +5,7 @@
 {
     \begin{flushleft}
         \vspace{-0.5cm}
-        {\small \insertsection\ \insertsubsection}~\\
+        {\small \insertsection \ifx\insertsubsection\empty\else\ - \insertsubsection\fi\leavevmode}\\
         \insertframetitle
     \end{flushleft}
 }
