@@ -34,19 +34,29 @@
 {
     \color{white}
     \vspace{6cm}
-    {\Huge\bf \inserttitle} \\[0.25cm]
-    {\Large \insertsubtitle} \\[0.5cm]
+    
+    \begin{minipage}[t][\baselineskip]{\paperwidth}
+        {\Large\bf \inserttitle}
+    \end{minipage}
+    \\[\baselineskip]
+    \begin{minipage}[t][2\baselineskip]{\paperwidth}
+        {\large \insertsubtitle}
+    \end{minipage}
     
     \vfill
     
-    \insertauthor \\
-    \insertdate
+    \begin{minipage}[t][\baselineskip]{\paperwidth}
+        {\large\bf \insertauthor}
+    \end{minipage}
+    
+    \begin{minipage}[t][\baselineskip]{\paperwidth}
+        \insertdate
+    \end{minipage}
     
     \vfill
     
     \addtocounter{page}{-1}
 }
-
 
 % Table of Contents.
 \setbeamertemplate{section in toc}[circle]
