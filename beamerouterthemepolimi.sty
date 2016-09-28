@@ -3,12 +3,21 @@
 % Header.
 \defbeamertemplate*{frametitle}{polimi}
 {
-    \begin{flushleft}
-        \vspace{-0.5cm}
-        {\small \insertsection \ifx\insertsubsection\empty\else\ - \insertsubsection\fi\leavevmode}\\
+    \begin{tikzpicture}[overlay, remember picture]
+    \node at ([shift={(1, -0.35)}] current page.north west) [anchor=north west, inner sep=0pt]
+    {
+        {\small \insertsection \ifx\insertsubsection\empty\else\ - \insertsubsection\fi\leavevmode}
+    };
+    \node at ([shift={(1, -0.85)}] current page.north west) [anchor=north west, inner sep=0pt]
+    {
         \insertframetitle
-    \end{flushleft}
+    };
+    \end{tikzpicture}
+    \vspace{1.1cm}
 }
+
+% Use frametitle template even if \frametitle is empty.
+\patchcmd{\endbeamer@frameslide}{\ifx\beamer@frametitle\@empty}{\iffalse}{}{\errmessage{failed to patch}}
 
 \defbeamertemplate{headline}{page number}
 {
