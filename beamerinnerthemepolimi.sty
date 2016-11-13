@@ -6,9 +6,9 @@
     \ifnum\c@framenumber=1
         \begin{tikzpicture}[overlay, remember picture]
             \if@bgphoto
-                \node at (current page.north) [anchor=north, inner sep=0pt] {\includegraphics[width=\paperwidth]{bgphoto_cut.png}};
+                \node at (current page.north) [anchor=north, inner sep=0pt] {\includegraphics[width=\paperwidth]{bgphoto_cut.jpg}};
             \fi
-            \node (foot) at (current page.south) [anchor=south, inner sep=0pt] {\includegraphics[width=\paperwidth]{bg.png}};
+            \node (foot) at (current page.south) [anchor=south, minimum width=\paperwidth, minimum height=0.4415\paperheight, fill=bluePolimi] {};
             \if@nologo\else
                 \node at (foot.north) [anchor=south, inner sep=0.5cm] {
                     \if@bgphoto
@@ -22,9 +22,9 @@
         \end{tikzpicture}
     \else
         \begin{tikzpicture}[overlay, remember picture]
-            \node (head) at ([shift={(0, 2.475)}] current page.north) [anchor=north, inner sep=0pt] {\includegraphics[width=\paperwidth]{bg.png}};
+            \node (head) at (current page.north) [anchor=north, minimum width=\paperwidth, minimum height=0.1835\paperheight, fill=bluePolimi] {};
             \node at ([shift={(0, 0.1)}] head.south) {\includegraphics[width=0.99\paperwidth]{decoration.png}};
-            \node at ([shift={(0, -3.225)}] current page.south) [anchor=south, inner sep=0pt] {\includegraphics[width=\paperwidth]{bg.png}};
+            \node (foot) at (current page.south) [anchor=south, minimum width=\paperwidth, minimum height=0.105\paperheight, fill=bluePolimi] {};
         \end{tikzpicture}
     \fi
 }

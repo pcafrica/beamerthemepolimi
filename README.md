@@ -37,7 +37,7 @@ In order to hide the default logo shown on the title page, the option _nologo_ i
 Then you can customize your own title page by typing, for instance, the following commands on the first slide, right after the _\maketitle_ command (see _demo.tex_):
 ```latex
 \begin{tikzpicture}[overlay, remember picture]
-    \node at (current page.north west) [anchor=north west, inner sep=0.5cm]
+    \node at (current page.north) [anchor=north, inner sep=2cm]
     {
         \includegraphics[width=0.3\paperwidth]{logo_centrato_BN_negativo.png}
     };
