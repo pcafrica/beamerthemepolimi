@@ -24,7 +24,7 @@ Finally write in your preamble:
 
 Custom options
 --------------
-A default background photo on the title page (instead of a default white background) can be selected through the optional parameter _bgphoto_:
+The standard background photo on the title page (instead of a default white background) can be selected through the optional parameter _bgphoto_:
 ```latex
 \usetheme[bgphoto]{polimi}
 ```
