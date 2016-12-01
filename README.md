@@ -43,3 +43,13 @@ Then you can customize your own title page by typing, for instance, the followin
     };
 \end{tikzpicture}
 ```
+
+The default block style can be modified by adding either
+```latex
+\setbeamertemplate{blocks}[rounded][shadow=false]
+```
+or
+```latex
+\setbeamertemplate{blocks}[default][shadow=false]
+```
+to your preamble after loading the theme.
