@@ -22,8 +22,8 @@ Finally write in your preamble:
 \usetheme{polimi}
 ```
 
-Custom options
---------------
+Custom options and logo
+-----------------------
 The standard background photo on the title page (instead of a default white background) can be selected through the optional parameter _bgphoto_:
 ```latex
 \usetheme[bgphoto]{polimi}
@@ -44,6 +44,19 @@ Then you can customize your own title page by typing, for instance, the followin
 \end{tikzpicture}
 ```
 
+Set a custom font
+-----------------
+You can set a custom font, which has to be installed on your system, by adding the following commands to the preamble and by using XeLaTeX as compiler:
+```latex
+\RequirePackage{ifxetex}
+\ifxetex
+    \usepackage{fontspec}
+    \setsansfont[Scale=0.95]{Arial}
+\fi
+```
+
+Change the default block style
+------------------------------
 The default block style can be modified by adding either
 ```latex
 \setbeamertemplate{blocks}[rounded][shadow=false]
