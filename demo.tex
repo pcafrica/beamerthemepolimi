@@ -7,10 +7,17 @@
 
 \usepackage{lipsum}
 
+% Set custom font (requires to compile with XeLaTeX).
+\RequirePackage{ifxetex}
+\ifxetex
+    \usepackage{fontspec}
+    \setsansfont[Scale=0.95]{Arial}
+\fi
+
 \title{Title}
 \subtitle{Subtitle}
 \author{Author}
-\date{01 dec 2016}
+\date{01 mar 2017}
 
 \begin{document}
     \begin{frame}
@@ -51,13 +58,10 @@
     
     \subsection{Subsection 1.2}
     
-    { % Slide without numbering.
-        \setbeamertemplate{headline}{}
-        \begin{frame}{Slide 1.2 without numbering}
-            \lipsum[2]
-        \end{frame}
-        \addtocounter{page}{-1}
-    }
+    % Slide without numbering.
+    \begin{frame}[nonumber]{Slide 1.2 without numbering}
+        \lipsum[2]
+    \end{frame}
     
     \section{Section 2}
     \begin{frame}{Slide 2}

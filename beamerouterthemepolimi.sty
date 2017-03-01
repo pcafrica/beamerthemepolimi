@@ -1,14 +1,17 @@
 \mode<presentation>
 
+\newlength{\xshift}
+\setlength{\xshift}{0.05\paperwidth}
+
 % Header.
 \defbeamertemplate*{frametitle}{polimi}
 {
     \begin{tikzpicture}[overlay, remember picture]
-    \node at ([shift={(1, -0.35)}] current page.north west) [anchor=north west, inner sep=0pt]
+    \node at ([shift={(\xshift, -0.35)}] current page.north west) [anchor=north west, inner sep=0pt]
     {
         {\small \insertsection \ifx\insertsubsection\empty\else\ - \insertsubsection\fi\leavevmode}
     };
-    \node at ([shift={(1, -0.85)}] current page.north west) [anchor=north west, inner sep=0pt]
+    \node at ([shift={(\xshift, -0.85)}] current page.north west) [anchor=north west, inner sep=0pt]
     {
         \insertframetitle
     };
@@ -17,27 +20,25 @@
 }
 
 % Use frametitle template even if \frametitle is empty.
-\patchcmd{\endbeamer@frameslide}{\ifx\beamer@frametitle\@empty}{\iffalse}{}{\errmessage{failed to patch}}
+\patchcmd{\endbeamer@frameslide}{\ifx\beamer@frametitle\@empty}{\iffalse}{}{\errmessage{Failed to patch frametitle.}}
 
 \defbeamertemplate{headline}{page number}
 {
     \ifnum\c@framenumber>1
-        \vspace{5px}
+        \vspace{\baselineskip}
         \setbeamertemplate{footline}[page number]
         \usebeamertemplate{footline}
     \fi
 }
 
-\setbeamertemplate{headline}[page number]
-
 % Footer.
 \defbeamertemplate{footline}{polimi}{
     \begin{minipage}[b][1cm][c]{\paperwidth}
         \ifnum\c@framenumber>1
-            \hspace{1.5mm}
+            \hspace{\xshift}
             {\small\color{white}\insertauthor}
             \hspace*{\fill}
-            \includegraphics[height=7px]{logo_bandiera.png}
+            \includegraphics[height=\baselineskip]{logo_bandiera.png}
             \hspace{1.5mm}
         \fi
     \end{minipage}
@@ -45,4 +46,14 @@
 
 \setbeamertemplate{footline}[polimi]
 
-\mode<all>
+% Enable nonumber option.
+\BeforeBeginEnvironment{frame}{
+    \setbeamertemplate{headline}[page number]
+}
+
+\makeatletter
+\define@key{beamerframe}{nonumber}[true]{
+    \setbeamertemplate{headline}{}
+    \addtocounter{page}{-1}
+}
+\makeatother
