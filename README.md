@@ -48,7 +48,7 @@ Set a custom font
 -----------------
 You can set a custom font, which has to be installed on your system, by adding the following commands to the preamble and by using XeLaTeX as compiler:
 ```latex
-\RequirePackage{ifxetex}
+\usepackage{ifxetex}
 \ifxetex
     \usepackage{fontspec}
     \setsansfont[Scale=0.95]{Arial}
