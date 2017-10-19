@@ -29,7 +29,7 @@
 {
     \ifnum\c@framenumber>0
         \begin{tikzpicture}[overlay, remember picture]
-        \node at ([shift={(-\xshift, -1.25)}] current page.north east) [anchor=south west, inner sep=0pt]
+        \node at ([shift={(-0.5\xshift, -1.25)}] current page.north east) [anchor=south east, inner sep=0pt]
         {
             {\color{white} \tiny \insertframenumber/\inserttotalframenumber}
         };
@@ -44,8 +44,13 @@
             \hspace{\xshift}
             {\small\color{white}\insertauthor}
             \hspace*{\fill}
-            \includegraphics[height=\baselineskip]{logo_bandiera.png}
-            \hspace{1.5mm}
+            
+            \begin{tikzpicture}[overlay, remember picture]
+            \node at ([shift={(-0.5\xshift, 0.5)}] current page.south east) [anchor=east, inner sep=0pt]
+            {
+                \includegraphics[height=\baselineskip]{logo_bandiera.png}
+            };
+            \end{tikzpicture}
         \fi
     \end{minipage}
 }

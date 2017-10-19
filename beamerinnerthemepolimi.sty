@@ -74,7 +74,7 @@
     \begin{tikzpicture}[overlay, remember picture]
         \node (foot) at (current page.south) [anchor=south, minimum width=\paperwidth, minimum height=0.4415\paperheight, fill=bluePolimi] {};
         \node at ([shift={(0, -0.1)}] foot.north) {\includegraphics[width=0.99\paperwidth]{decoration.png}};
-        \path let \p1 = ([shift={(0, 0.105\paperheight+0.25)}] current page.south east), \p2 = (current page.west) in (\paperwidth,\y1) edge [white, line width=0.5] (\x2,\y1);
+        \path let \p1 = ([shift={(0, 0.105\paperheight+0.25)}] current page.south west), \p2 = (current page.east) in (\x1, \y1) edge [white, line width=0.5] (\x2, \y1);
         \node at ([shift={(\xshift, 3.5)}] current page.south west) [anchor=north west, inner sep=0pt, text width=\textwidth+1cm]
         {
             {\color{white}\Large\bf \insertsection}

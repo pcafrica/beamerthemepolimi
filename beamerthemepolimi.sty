@@ -26,3 +26,15 @@
 \setbeamertemplate{blocks}[rounded][shadow=true]
 \setbeamertemplate{itemize items}[square]
 \setbeamertemplate{itemize subitem}[triangle]
+
+% Set margins.
+\setbeamersize{text margin left=\xshift, text margin right=\xshift}
+\setlength{\leftmargini}{\xshift}
+
+\let\oldtoc\tableofcontents
+\renewcommand{\tableofcontents}[1][]{%
+    \hspace*{0.5\xshift}
+    \begin{minipage}{\textwidth}
+        \oldtoc[#1]
+    \end{minipage}
+}
