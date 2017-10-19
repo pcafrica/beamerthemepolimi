@@ -1,9 +1,9 @@
 \mode<presentation>
 
 % Background.
-\setbeamertemplate{background}{
+\defbeamertemplate*{background}{polimi}{
     % Titlepage.
-    \ifnum\c@framenumber=1
+    \ifnum\c@framenumber=0
         \begin{tikzpicture}[overlay, remember picture]
             \if@bgphoto
                 \node at (current page.north) [anchor=north, inner sep=0pt] {\includegraphics[width=\paperwidth]{bgphoto_cut.jpg}};
@@ -27,6 +27,13 @@
             \node (foot) at (current page.south) [anchor=south, minimum width=\paperwidth, minimum height=0.105\paperheight, fill=bluePolimi] {};
         \end{tikzpicture}
     \fi
+}
+
+% Only footer background.
+\defbeamertemplate*{background}{footer}{
+    \begin{tikzpicture}[overlay, remember picture]
+    \node (foot) at (current page.south) [anchor=south, minimum width=\paperwidth, minimum height=0.105\paperheight, fill=bluePolimi] {};
+    \end{tikzpicture}
 }
 
 % Title page.
@@ -55,9 +62,38 @@
     
     \vfill
     
-    \addtocounter{page}{-1}
+    \addtocounter{framenumber}{-1}
 }
 
 % Table of Contents.
 \setbeamertemplate{section in toc}[circle]
 \setbeamertemplate{subsection in toc}{\leavevmode \leftskip=0.7em {\color{bluePolimi} $\bullet$} \hskip1pt \inserttocsubsection\par}  
+
+% Section page.
+\defbeamertemplate*{section page}{polimi}{
+    \begin{tikzpicture}[overlay, remember picture]
+        \node (foot) at (current page.south) [anchor=south, minimum width=\paperwidth, minimum height=0.4415\paperheight, fill=bluePolimi] {};
+        \node at ([shift={(0, -0.1)}] foot.north) {\includegraphics[width=0.99\paperwidth]{decoration.png}};
+        \path let \p1 = ([shift={(0, 0.105\paperheight+0.25)}] current page.south east), \p2 = (current page.west) in (\paperwidth,\y1) edge [white, line width=0.5] (\x2,\y1);
+        \node at ([shift={(\xshift, 3.5)}] current page.south west) [anchor=north west, inner sep=0pt, text width=\textwidth+1cm]
+        {
+            {\color{white}\Large\bf \insertsection}
+        };
+    \end{tikzpicture}
+}
+\setbeamertemplate{section page}[polimi]
+
+
+% Subsection page.
+\defbeamertemplate*{subsection page}{polimi}{
+    \begin{tikzpicture}[overlay, remember picture]
+    \node (foot) at (current page.south) [anchor=south, minimum width=\paperwidth, minimum height=0.4415\paperheight, fill=bluePolimi] {};
+    \node at ([shift={(0, -0.1)}] foot.north) {\includegraphics[width=0.99\paperwidth]{decoration.png}};
+    \path let \p1 = ([shift={(0, 0.105\paperheight+0.25)}] current page.south east), \p2 = (current page.west) in (\paperwidth,\y1) edge [white, line width=0.5] (\x2,\y1);
+    \node at ([shift={(\xshift, 3.5)}] current page.south west) [anchor=north west, inner sep=0pt, text width=\textwidth+1cm]
+    {
+        {\color{white}\Large\bf \insertsubsection}
+    };
+    \end{tikzpicture}
+}
+\setbeamertemplate{subsection page}[polimi]

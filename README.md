@@ -7,6 +7,7 @@ Demo
 ----
 ![](https://github.com/elauksap/beamerthemepolimi/blob/master/demo-bgphoto.jpg)
 ![](https://github.com/elauksap/beamerthemepolimi/blob/master/demo-bgwhite.jpg)
+![](https://github.com/elauksap/beamerthemepolimi/blob/master/demo-sectionpage.jpg)
 ![](https://github.com/elauksap/beamerthemepolimi/blob/master/demo-slide.jpg)
 
 Instructions

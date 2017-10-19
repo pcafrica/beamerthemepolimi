@@ -17,7 +17,7 @@
 \title{Title}
 \subtitle{Subtitle}
 \author{Author}
-\date{01 mar 2017}
+\date{dd mm yyyy}
 
 \begin{document}
     \begin{frame}
@@ -37,11 +37,19 @@
     \end{frame}
     
     \section{Section 1}
+    % Section page.
+    \begin{frame}[plain]{}
+        \sectionpage
+    \end{frame}
+    
     \begin{frame}{Slide 1}
         \lipsum[1]
     \end{frame}
     
     \subsection{Subsection 1.1}
+    \begin{frame}[plain]{}
+        \subsectionpage
+    \end{frame}
     \begin{frame}
         This frame has an empty title.
         \vfill
@@ -57,20 +65,21 @@
     \end{frame}
     
     \subsection{Subsection 1.2}
-    
     % Slide without numbering.
     \begin{frame}[nonumber]{Slide 1.2 without numbering}
         \lipsum[2]
     \end{frame}
     
-    \section{Section 2}
+    \section[Short]{Section 2}
     \begin{frame}{Slide 2}
         \begin{block}{Block}
             Text.
         \end{block}
+        \pause
         \begin{alertblock}{Alert block}
             Alert \alert{text}.
         \end{alertblock}
+        \pause
         \begin{exampleblock}{Example block}
             Example \textcolor{greenPolimi}{text}.
         \end{exampleblock}
