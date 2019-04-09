@@ -41,11 +41,11 @@
 \defbeamertemplate{footline}{polimi}{
     \begin{minipage}[b][1cm][c]{\paperwidth}
         \ifnum\c@framenumber>0
-            \hspace{\xshift}
-            {\small\color{white}\insertauthor}
-            \hspace*{\fill}
-            
             \begin{tikzpicture}[overlay, remember picture]
+            \node at ([shift={(\xshift, 0.5)}] current page.south west) [anchor=west, inner sep=0pt]
+            {
+                {\small\color{white} \insertauthor}
+            };
             \node at ([shift={(-0.5\xshift, 0.5)}] current page.south east) [anchor=east, inner sep=0pt]
             {
                 \includegraphics[height=\baselineskip]{logo_bandiera.png}
@@ -74,9 +74,11 @@
 % Enable plain option.
 \makeatletter
 \define@key{beamerframe}{plain}[true]{
-    \setbeamertemplate{background}[footer]
-    \setbeamertemplate{frametitle}[plain]
-    \setbeamertemplate{headline}{}
-    \addtocounter{framenumber}{-1}
+    \ifnum\c@framenumber>0
+        \setbeamertemplate{background}[footer]
+        \setbeamertemplate{frametitle}[plain]
+        \setbeamertemplate{headline}{}
+        \addtocounter{framenumber}{-1}
+    \fi
 }
 \makeatother
